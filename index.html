@@ -26,7 +26,7 @@
 			<h2>Create Account</h2>
 		</div>
 
-		<form class="form" id="form">	
+		<form class="form" id="form" method="get">	
 
 			<div class="form-control ">
 				<label for="Username">Username</label>
@@ -46,8 +46,9 @@
 
 			<div class="form-control">
 				<label for="phone">Phone</label>
-				<input type="text" name="phone" id="phone" placeholder="+233 00 0000 000 " 
-				 onkeypress="numbersOnly(event)"> 
+				<input type="text" name="phone" id="phone" placeholder="0543184000" 
+				 > 
+				 <!-- onkeypress="numbersOnly(event)" -->
 				<i class="fa fa-check-circle"></i>
 				<i class="fa fa-exclamation-circle"></i>
 				<small>Error</small>
@@ -97,34 +98,49 @@
 			if(usernameVal === ''){
 				setErrorFor(username, "Username is empty, fill.")
 				console.log('username is empty()')
+				return				
 			}else{
 				setSuccessFor(username) 
+				
 			}
 
 			if(emailVal === ''){
-				setErrorFor(email, "Email is empty, fill.")
+				setErrorFor(email, "Email is empty, fill.")		
+				return		
 			}else{
 				setSuccessFor(email) 
+				
 			}
 
 			if(phoneVal === ''){
-				setErrorFor(phone, "Phone is empty, fill.")
-				console.log('username is empty()')
+				setErrorFor(phone, "Phone is empty, fill.")		
+				return		
+				console.log('Phone is empty()')
 			}else{
-				setSuccessFor(phone) 
+					setSuccessFor(phone)		
 			}
 
 			if(passwordVal === ''){
-				setErrorFor(password, "Password is empty, fill.")
-			}else{
+				setErrorFor(password, "Password is empty, fill.");	
+				return			
+			}else{	
 				setSuccessFor(password) 
 			}
 
 			if(conPasswordVal === ''){
-				setErrorFor(conPassword, "Confirm Password is empty, fill.")
-			}else{
-				setSuccessFor(conPassword) 
+				setErrorFor(conPassword, "Confirm Password is empty, fill.")	
+				return		
+			}else{				
+				setSuccessFor(conPassword) 				
 			}
+				let mdetail = {
+					"Username":usernameVal,
+					"Email": emailVal,
+					"Phone": phoneVal,
+					"Password":passwordVal				
+				}
+
+				display(mdetail);
 			
 		}
 
@@ -139,6 +155,34 @@
 			const formControl = input.parentElement;	
 			formControl.className ='form-control success';
 		}
+
+		function display(mdetail){			
+			let regex = /^[0][0-9]{9}$/;
+				console.log(mdetail);
+				if(!regex.test(mdetail.phone)){					 									
+					console.log('number');
+					setSuccessFor(phone,"");	
+					alert(JSON.stringify(mdetail));				
+				}else {				
+					setErrorFor(phone,"Not valid phone");			
+				}
+
+			// if(val===1){				
+			// 	alert(JSON.stringify(mdetail));
+			// }
+		}
+
+			function numbersOnly (input,numberi) {							
+				var regex = /^[0][0-9]{9}$/;
+				if(regex.test(numberi)){	
+				 	i=1;								
+					console.log('number');
+					setSuccessFor(input,"");					
+				}else {
+					i=0;
+					setErrorFor(input,"Not valid phone");			
+				}
+			}
 	</script>
 </body>
 </html>
