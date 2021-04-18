@@ -1,188 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- <script type="text/javascript" src="js/form.js"></script> -->
-	<script>
-		 /*$(document ).ready() {
-			function numbersOnly(evt) {
-				var ch = document.getElementById('phone').value;
-				var regex = /^[0][0.9]$/;
-				if(!regex.test(ch)){
-					console.log('number');
-				}else {
-					evt.preventDefault();
-				}
-			}
-		}*/
-
-	</script>	
+	<title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
-<body>			
-	<div class="container">
-		<div class="header">
-			<h2>Create Account</h2>
+<body>
+	<div class="nav">
+		 <ul>
+		 	<li>Home</li>
+		 	<li>Services</li>
+		 	<li>Support</li>
+		 	<li>Contact</li>
+		 </ul>
+	</div>
+
+	<div class="wrapper">
+		<div class="image-area" style="background-image: url('images/strangerThns.png');">
+			<div class="image-text">
+				Movie Hock				
+			</div>
 		</div>
 
-		<form class="form" id="form" method="get">	
-
-			<div class="form-control ">
-				<label for="Username">Username</label>
-				<input type="text" name="Username" id="Username" placeholder="Username" > 
-				<i class="fa fa-check-circle"></i>
-				<i class="fa fa-exclamation-circle"></i>
-				<small>Error</small>
+		<div class="intro-text">
+			<p>In our world of imagination connecting to your very own world, we feast your eyes beyond comtemplory science into world of impossibilities, welcome to movie hock</p>
+		</div>
+		<div class="Services">
+			<div class="single-service" style="width: 70%;border:2px #eee solid;">
+				<h3>Project Power</h3>
+				<img src="images/project-power-poster-netflix.jpg" style="width: 100%"/>
+				<p>
+					Project Power is a 2020 American superhero film directed by Henry Joost and Ariel Schulman, produced by Eric Newman and Bryan Unkeless, and written by Mattson Tomlin. It stars Jamie Foxx, Joseph Gordon-Levitt, and Dominique Fishback, alongside Colson Baker, Rodrigo Santoro, Amy Landecker and Allen Maldonado, and follows a drug dealer, a police officer, and a former soldier who team up to stop the distribution of a pill that gives the user superpowers for five minutes.
+				</p>
 			</div>
 
-			<div class="form-control ">
-				<label for="Email">Email</label>
-				<input type="email" name="Email" id="Email" placeholder="email@amalitech.org" > 
-				<i class="fa fa-check-circle"></i>
-				<i class="fa fa-exclamation-circle"></i>
-				<small>Error</small>
+			<div class="single-service" style="width: 70%;border:2px #eee solid">
+				<h3>Project Power</h3>
+				<img src="images/project-power-poster-netflix.jpg" style="width: 100%"/>
+				<p>
+					Project Power is a 2020 American superhero film directed by Henry Joost and Ariel Schulman, produced by Eric Newman and Bryan Unkeless, and written by Mattson Tomlin. It stars Jamie Foxx, Joseph Gordon-Levitt, and Dominique Fishback, alongside Colson Baker, Rodrigo Santoro, Amy Landecker and Allen Maldonado, and follows a drug dealer, a police officer, and a former soldier who team up to stop the distribution of a pill that gives the user superpowers for five minutes.
+				</p>
 			</div>
 
-			<div class="form-control">
-				<label for="phone">Phone</label>
-				<input type="text" name="phone" id="phone" placeholder="0543184000" 
-				 > 
-				 <!-- onkeypress="numbersOnly(event)" -->
-				<i class="fa fa-check-circle"></i>
-				<i class="fa fa-exclamation-circle"></i>
-				<small>Error</small>
+			<div class="single-service" style="width: 70%;border:2px #eee solid">
+				<h3>Project Power</h3>
+				<img src="images/project-power-poster-netflix.jpg" style="width: 100%"/>
+				<p>
+					Project Power is a 2020 American superhero film directed by Henry Joost and Ariel Schulman, produced by Eric Newman and Bryan Unkeless, and written by Mattson Tomlin. It stars Jamie Foxx, Joseph Gordon-Levitt, and Dominique Fishback, alongside Colson Baker, Rodrigo Santoro, Amy Landecker and Allen Maldonado, and follows a drug dealer, a police officer, and a former soldier who team up to stop the distribution of a pill that gives the user superpowers for five minutes.
+				</p>
 			</div>
 
-			<div class="form-control">
-				<label for="Password">Password</label>
-				<input type="text" name="Username" id="password" placeholder="Password" > 
-				<i class="fa fa-check-circle"></i>
-				<i class="fa fa-exclamation-circle"></i>
-				<small>Error</small>
+			<div class="single-service" style="width: 70%;border:2px #eee solid">
+				<h3>Project Power</h3>
+				<img src="images/project-power-poster-netflix.jpg" style="width: 100%"/>
+				<p>
+					Project Power is a 2020 American superhero film directed by Henry Joost and Ariel Schulman, produced by Eric Newman and Bryan Unkeless, and written by Mattson Tomlin. It stars Jamie Foxx, Joseph Gordon-Levitt, and Dominique Fishback, alongside Colson Baker, Rodrigo Santoro, Amy Landecker and Allen Maldonado, and follows a drug dealer, a police officer, and a former soldier who team up to stop the distribution of a pill that gives the user superpowers for five minutes.
+				</p>
 			</div>
+		</div>
 
-			<div class="form-control">
-				<label for="conPassword">Confirm Password</label>
-				<input type="text" name="conPassword" id="conPassword" placeholder="confirm password" > 
-				<i class="fa fa-check-circle"></i>
-				<i class="fa fa-exclamation-circle"></i>
-				<small>Error</small>
-			</div>
-			
-			<button>Sign</button>
+	</div>
 
-		</form>
-	</div>	
-	<script>		
-		const form = document.getElementById('form');
-		const username = document.getElementById('Username');
-		const email = document.getElementById('Email');
-		const phone = document.getElementById('phone');
-		const password = document.getElementById('password');
-		const conPassword = document.getElementById('conPassword');
-
-		form.addEventListener('submit', (e)=> {
-			e.preventDefault();
-
-			checkInputs();
-		}); 
-
-		function checkInputs () {
-			const usernameVal = username.value.trim();                                 
-			const emailVal = email.value.trim();
-			const phoneVal = phone.value.trim();
-			const passwordVal =password.value.trim();
-			const conPasswordVal =conPassword.value.trim();
-
-			if(usernameVal === ''){
-				setErrorFor(username, "Username is empty, fill.")
-				console.log('username is empty()')
-				return				
-			}else{
-				setSuccessFor(username) 
-				
-			}
-
-			if(emailVal === ''){
-				setErrorFor(email, "Email is empty, fill.")		
-				return		
-			}else{
-				setSuccessFor(email) 
-				
-			}
-
-			if(phoneVal === ''){
-				setErrorFor(phone, "Phone is empty, fill.")		
-				return		
-				console.log('Phone is empty()')
-			}else{
-					setSuccessFor(phone)		
-			}
-
-			if(passwordVal === ''){
-				setErrorFor(password, "Password is empty, fill.");	
-				return			
-			}else{	
-				setSuccessFor(password) 
-			}
-
-			if(conPasswordVal === ''){
-				setErrorFor(conPassword, "Confirm Password is empty, fill.")	
-				return		
-			}else{				
-				setSuccessFor(conPassword) 				
-			}
-				let mdetail = {
-					"Username":usernameVal,
-					"Email": emailVal,
-					"Phone": phoneVal,
-					"Password":passwordVal				
-				}
-
-				display(mdetail);
-			
-		}
-
-		function setErrorFor(input, message){
-			const formControl = input.parentElement;
-			const small = formControl.querySelector('small');
-			small.innerText = message;
-			formControl.className ='form-control error';
-		}
-
-		function setSuccessFor(input, message){
-			const formControl = input.parentElement;	
-			formControl.className ='form-control success';
-		}
-
-		function display(mdetail){			
-			let regex = /^[0][0-9]{9}$/;
-				console.log(mdetail);
-				if(!regex.test(mdetail.phone)){					 									
-					console.log('number');
-					setSuccessFor(phone,"");	
-					alert(JSON.stringify(mdetail));				
-				}else {				
-					setErrorFor(phone,"Not valid phone");			
-				}
-
-			// if(val===1){				
-			// 	alert(JSON.stringify(mdetail));
-			// }
-		}
-
-			function numbersOnly (input,numberi) {							
-				var regex = /^[0][0-9]{9}$/;
-				if(regex.test(numberi)){	
-				 	i=1;								
-					console.log('number');
-					setSuccessFor(input,"");					
-				}else {
-					i=0;
-					setErrorFor(input,"Not valid phone");			
-				}
-			}
-	</script>
 </body>
 </html>
