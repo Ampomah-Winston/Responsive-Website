@@ -4,37 +4,41 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-   />
+	<!-- <script type="text/javascript" src="js/form.js"></script> -->
+	<script>
+		 /*$(document ).ready() {
+			function numbersOnly(evt) {
+				var ch = document.getElementById('phone').value;
+				var regex = /^[0][0.9]$/;
+				if(!regex.test(ch)){
+					console.log('number');
+				}else {
+					evt.preventDefault();
+				}
+			}
+		}*/
 
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script> -->
-
-
-
+	</script>	
 </head>
-<body>	
+<body>			
 	<div class="container">
 		<div class="header">
 			<h2>Create Account</h2>
 		</div>
-	
 
 		<form class="form" id="form">	
 
-			<div class="form-control success">
+			<div class="form-control ">
 				<label for="Username">Username</label>
-				<input type="text" name="Username" id="Username" placeholder="Username" required=""> 
+				<input type="text" name="Username" id="Username" placeholder="Username" > 
 				<i class="fa fa-check-circle"></i>
 				<i class="fa fa-exclamation-circle"></i>
 				<small>Error</small>
 			</div>
 
-			<div class="form-control error">
+			<div class="form-control ">
 				<label for="Email">Email</label>
-				<input type="email" name="Email" id="Email" placeholder="email@amalitech.org" required=""> 
+				<input type="email" name="Email" id="Email" placeholder="email@amalitech.org" > 
 				<i class="fa fa-check-circle"></i>
 				<i class="fa fa-exclamation-circle"></i>
 				<small>Error</small>
@@ -42,8 +46,8 @@
 
 			<div class="form-control">
 				<label for="phone">Phone</label>
-				<input type="tel" name="Username" id="phone" placeholder="+233 00 0000 000" required="" 
-				pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" number> 
+				<input type="text" name="phone" id="phone" placeholder="+233 00 0000 000 " 
+				 onkeypress="numbersOnly(event)"> 
 				<i class="fa fa-check-circle"></i>
 				<i class="fa fa-exclamation-circle"></i>
 				<small>Error</small>
@@ -51,14 +55,15 @@
 
 			<div class="form-control">
 				<label for="Password">Password</label>
-				<input type="text" name="Username" id="Username" placeholder="Password" required=""> 
+				<input type="text" name="Username" id="password" placeholder="Password" > 
 				<i class="fa fa-check-circle"></i>
 				<i class="fa fa-exclamation-circle"></i>
 				<small>Error</small>
 			</div>
+
 			<div class="form-control">
 				<label for="conPassword">Confirm Password</label>
-				<input type="text" name="conPassword" id="conPassword" placeholder="confirm password" required=""> 
+				<input type="text" name="conPassword" id="conPassword" placeholder="confirm password" > 
 				<i class="fa fa-check-circle"></i>
 				<i class="fa fa-exclamation-circle"></i>
 				<small>Error</small>
@@ -67,6 +72,73 @@
 			<button>Sign</button>
 
 		</form>
-</div>
+	</div>	
+	<script>		
+		const form = document.getElementById('form');
+		const username = document.getElementById('Username');
+		const email = document.getElementById('Email');
+		const phone = document.getElementById('phone');
+		const password = document.getElementById('password');
+		const conPassword = document.getElementById('conPassword');
+
+		form.addEventListener('submit', (e)=> {
+			e.preventDefault();
+
+			checkInputs();
+		}); 
+
+		function checkInputs () {
+			const usernameVal = username.value.trim();                                 
+			const emailVal = email.value.trim();
+			const phoneVal = phone.value.trim();
+			const passwordVal =password.value.trim();
+			const conPasswordVal =conPassword.value.trim();
+
+			if(usernameVal === ''){
+				setErrorFor(username, "Username is empty, fill.")
+				console.log('username is empty()')
+			}else{
+				setSuccessFor(username) 
+			}
+
+			if(emailVal === ''){
+				setErrorFor(email, "Email is empty, fill.")
+			}else{
+				setSuccessFor(email) 
+			}
+
+			if(phoneVal === ''){
+				setErrorFor(phone, "Phone is empty, fill.")
+				console.log('username is empty()')
+			}else{
+				setSuccessFor(phone) 
+			}
+
+			if(passwordVal === ''){
+				setErrorFor(password, "Password is empty, fill.")
+			}else{
+				setSuccessFor(password) 
+			}
+
+			if(conPasswordVal === ''){
+				setErrorFor(conPassword, "Confirm Password is empty, fill.")
+			}else{
+				setSuccessFor(conPassword) 
+			}
+			
+		}
+
+		function setErrorFor(input, message){
+			const formControl = input.parentElement;
+			const small = formControl.querySelector('small');
+			small.innerText = message;
+			formControl.className ='form-control error';
+		}
+
+		function setSuccessFor(input, message){
+			const formControl = input.parentElement;	
+			formControl.className ='form-control success';
+		}
+	</script>
 </body>
 </html>
