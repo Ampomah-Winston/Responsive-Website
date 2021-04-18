@@ -80,10 +80,15 @@ background: linear-gradient(90deg, rgba(255,31,99,1) 0%, rgba(255,255,255,0.7847
 
 .Services{
 	/*max-width: 100%;
-	margin: 10px 10px;
+	margin: 0px 16px;
 	padding: 0px auto;
 	align-items: center;
-	justify-content: center;*/
+	justify-content: center;
+
+	width: 100%;
+	 display: grid;
+	  grid-column-gap: 70px;
+	 grid-template-columns: 700px;
 
 	font-family: 'Ubuntu Mono', monospace;
 	background-color: #9b59b6;
@@ -91,9 +96,15 @@ background: linear-gradient(90deg, rgba(255,31,99,1) 0%, rgba(255,255,255,0.7847
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+	margin:0;*/
+
+font-family: 'Ubuntu Mono', monospace;
+	background-color: #9b59b6;
+	
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
 	margin:0;
-
-
 	background: linear-gradient(90deg, rgba(255,31,99,1) 0%, rgba(255,255,255,0.7847514005602241) 41%, rgba(0,212,255,1) 70%);	color: white;
 }
 
@@ -101,8 +112,14 @@ background: linear-gradient(90deg, rgba(255,31,99,1) 0%, rgba(255,255,255,0.7847
 	margin-bottom:  30px;	
 	padding: auto auto;	
 	box-shadow: 0 2px 5px rgba(1,2,1,0.5);
+	width: 70%;border:2px #eee solid;
+}
+
+.single-service p{	
+	color:rgb(0,0,0,0.5);
+	padding: 5px;
 }
 
 @media screen and (min-width: 700px){
-	
+
 }
